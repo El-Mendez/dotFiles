@@ -1,0 +1,70 @@
+"" Regular config
+set scrolloff=5
+set incsearch
+map Q gq
+
+"" Plugins
+if has("unix")
+	call plug#begin('~/.config/nvim/plugged')
+else
+	call plug#begin('~/AppData/Local/nvim/plugged')
+endif
+
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'preservim/nerdtree'
+Plug 'easymotion/vim-easymotion'
+set visualbell
+
+if !has("ide")
+	Plug 'jiangmiao/auto-pairs'
+	Plug 'vim-airline/vim-airline'		
+	Plug 'vim-airline/vim-airline-themes'
+	Plug 'Yggdroot/indentLine'
+	let g:airline_theme='onedark'
+	set number
+endif
+
+call plug#end()
+
+"" General Settings
+imap kj <Esc>
+vmap kj <Esc>
+set timeoutlen=400
+
+let mapleader = " "
+nnoremap go :NERDTree<CR>
+
+"" Acciones de IDE
+nmap <leader>w <Plug>(easymotion-bd-w)
+nmap <leader>k <Plug>(easymotion-sol-k)
+nmap <leader>j <Plug>(easymotion-sol-j)
+
+nmap <leader>f <Plug>(easymotion-s)
+
+"" Para usar el clipboard
+nmap <leader>y \"*y
+vmap <leader>y \"*y
+nmap <leader>p \"*p
+
+"" Acciones de IDE
+if has('ide')
+	"" Movimiento
+	nmap <leader>h <Action>(PreviousTab)
+	nmap <leader>l <Action>(NextTab)
+	nmap <leader>Q <Action>(CloseEditor)
+	nmap <leader>q <Action>(CloseActiveTab)
+	nmap <leader>t <action>(ActivateTerminalToolWindow)
+
+	"" Para errores
+	nmap <leader>e <Action>(ShowErrorDescription)
+	nmap ge <Action>(GotoNextError)
+	nmap gE <Action>(GotoPreviousError)
+	nmap <leader>r <Action>(RenameElement)
+	"" Para debug
+	nmap <leader>D <Action>(Debug)
+	nmap <leader>d <Action>(ToggleLineBreakpoint)
+
+	nmap <leader><leader> <Action>(Run)
+endif
+
