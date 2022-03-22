@@ -1,6 +1,8 @@
 # Dot Files
 Me dio mucha pereza tener que estar va de sincronizar mis archivos en muchos lugares, así que mejor voy a poner toda mi configuración en línea. 
 
+**Todos los comandos que utilizan mklink en windows se tienen que correr en la `cmd.exe` como administrador.**
+
 ## Terminal
 La configuración en Windows solo son dos cosas realmente, la terminal y vim.
 
@@ -28,8 +30,8 @@ Install-Module PSReadLine
 
 
 #### Importar el perfil de configuración
-```PowerShell
-mklink C:\Users\pablo\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 C:\Users\pablo\dotFiles\pwsh_profile.ps1
+```cmd
+mklink %userprofile%\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 %userprofile%\dotFiles\pwsh_profile.ps1
 ```
 
 ### Para Linux
@@ -52,7 +54,7 @@ Por alguna razón no me funciona bien la extensión para sincronizar extensiones
 ### IdeaVim
 Para Windows:
 ```PowerShell
-mklink C:\Users\pablo\.ideavimrc C:\Users\pablo\dotFiles\.vim_config
+mklink %userprofile%\.ideavimrc %userprofile%\dotFiles\.vim_config
 ```
 
 Para Linux:
@@ -63,7 +65,7 @@ ln -s ~/.ideavimrc ~/dotFiles/.vim_config
 ## Neovim
 Para que funcione bien es necesario tener instalado vim-plug.
 ```PowerShell
-mklink C:\Users\user\AppData\Local\nvim\init.vim C:\Users\user\dotFiles\.vim_config
+mklink %userprofile%\AppData\Local\nvim\init.vim %userprofile%\dotFiles\.vim_config
 ```
 
 Para Linux:
@@ -74,6 +76,6 @@ ln -s ~/.config/nvim/.ideavimrc ~/dotFiles/.vim_config
 ## VsCode
 No lo utilizo mucho, pero igual quiero tener mi configuración compartida. 
 ```PowerShell
-mklink C:\Users\pablo\AppData\Roaming\Code\User\settings.json C:\Users\pablo\dotFiles\vscode.settings.json
+mklink %userprofile%\AppData\Roaming\Code\User\settings.json %userprofile%\dotFiles\vscode.settings.json
 ```
 TODO, verlo en Linux y las extensiones.

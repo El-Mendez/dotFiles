@@ -60,11 +60,11 @@ if has('ide')
 	nmap <leader>e <Action>(ShowErrorDescription)
 	nmap ge <Action>(GotoNextError)
 	nmap gE <Action>(GotoPreviousError)
-	nmap <leader>r <Action>(RenameElement)
+	nmap <leader>cw <Action>(RenameElement)
 	"" Para debug
 	nmap <leader>D <Action>(Debug)
 	nmap <leader>d <Action>(ToggleLineBreakpoint)
 
-	nmap <leader><leader> <Action>(Run)
+	nmap <leader>r <Action>(Run)
 endif
 
