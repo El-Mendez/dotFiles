@@ -61,7 +61,7 @@ mklink %userprofile%\.ideavimrc %userprofile%\dotFiles\.vim_config
 
 Para Linux:
 ```bash
-ln -s ~/.ideavimrc ~/dotFiles/.vim_config
+ln -s ~/dotFiles/.vim_config ~/.ideavimrc
 ```
 
 ## Neovim
@@ -72,7 +72,8 @@ mklink %userprofile%\AppData\Local\nvim\init.vim %userprofile%\dotFiles\.vim_con
 
 Para Linux:
 ```bash
-ln -s ~/.config/nvim/.ideavimrc ~/dotFiles/.vim_config
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+ln -s ~/dotFiles/.vim_config ~/.config/nvim/init.vim
 ```
 
 ## VsCode
