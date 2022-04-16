@@ -23,6 +23,8 @@ if !has("ide")
 	Plug 'Yggdroot/indentLine'
 	Plug 'ryanoasis/vim-devicons'
 	let g:airline_theme='onedark'
+	let g:airline_left_sep = ''
+	let g:airline_right_sep = ''
 	set number
 endif
 
