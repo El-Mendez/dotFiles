@@ -21,6 +21,7 @@ if !has("ide")
 	Plug 'vim-airline/vim-airline'		
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'Yggdroot/indentLine'
+	Plug 'ryanoasis/vim-devicons'
 	let g:airline_theme='onedark'
 	set number
 endif
