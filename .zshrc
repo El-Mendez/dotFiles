@@ -21,8 +21,8 @@ ZSH_THEME_RANDOM_CANDIDATES=(
 # ENABLE_CORRECTION="true"
 
 plugins=(
-	git web-search zsh-autosuggestions colored-man-pages 
-	colorize extract
+	git web-search zsh-autosuggestions 
+	colorize extract zsh-syntax-highlighting sudo
 )
 
 source $ZSH/oh-my-zsh.sh
