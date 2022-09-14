@@ -37,7 +37,32 @@ mklink %userprofile%\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 %user
 ```
 
 ### Para Linux
-TODO, no me acuerdo xd. Pero uso fish.
+#### Descargar zsh
+```bash
+sudo apt-get install zsh
+```
+
+#### Install oh-my-zsh
+Tiene un montón de temas y extensiones de paso. No es necesario poner a zsh como default, porque aquí lo podés hacer:
+```bash
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+```
+
+#### Autosuggestions
+Es para que autocomplete varios comandos de Linux.
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+#### Syntax-Hight-Lighting
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+#### Copiar .zshrc
+```bash
+ln -s ~/dotFiles/.zshrc ~/.zshrc
+```
 
 ## Jetbrains
 ### Extensiones
