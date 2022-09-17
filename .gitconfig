@@ -1,0 +1,21 @@
+[user]
+	email = 47764656+El-Mendez@users.noreply.github.com
+	name = Méndez
+[core]
+	longpaths = true
+	editor = nvim
+	excludesFile = ./.gitignore
+[commit]
+	gpgSign = true
+	template = ./.gittemplate
+[tag]
+	forceSignAnnotated = true
+[alias]
+	graph = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local
+[gpg]
+	format = ssh
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
