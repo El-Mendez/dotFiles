@@ -4,10 +4,8 @@
 [core]
 	longpaths = true
 	editor = nvim
-	excludesFile = ./.gitignore
 [commit]
 	gpgSign = true
-	template = ./.gittemplate
 [tag]
 	forceSignAnnotated = true
 [alias]
