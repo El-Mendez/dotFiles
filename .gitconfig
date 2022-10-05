@@ -10,6 +10,7 @@
 	forceSignAnnotated = true
 [alias]
 	graph = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local
+	sw = switch -
 [gpg]
 	format = ssh
 [filter "lfs"]
