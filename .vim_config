@@ -30,6 +30,8 @@ if !has("ide")
 	colorscheme pablo
 endif
 
+set relativenumber
+
 call plug#end()
 
 "" General Settings
