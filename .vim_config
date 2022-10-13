@@ -14,7 +14,10 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
 Plug 'easymotion/vim-easymotion'
+
 set visualbell
+set relativenumber
+set number
 
 if !has("ide")
 	Plug 'jiangmiao/auto-pairs'
@@ -26,11 +29,9 @@ if !has("ide")
 	let g:airline_left_sep = ''
 	let g:airline_right_sep = ''
 	let NERDTreeShowHidden=1
-	set number
 	colorscheme pablo
 endif
 
-set relativenumber
 
 call plug#end()
 
