@@ -21,7 +21,7 @@ set number
 
 if !has("ide")
 	Plug 'jiangmiao/auto-pairs'
-	Plug 'vim-airline/vim-airline'		
+	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'Yggdroot/indentLine'
 	Plug 'ryanoasis/vim-devicons'
@@ -60,15 +60,19 @@ if has('ide')
 	"" Movimiento
 	nmap <leader>h <Action>(PreviousTab)
 	nmap <leader>l <Action>(NextTab)
+
 	nmap <leader>Q <Action>(CloseEditor)
 	nmap <leader>q <Action>(CloseActiveTab)
-	nmap <leader>t <action>(ActivateTerminalToolWindow)
+
+	nmap <leader>o <Action>(GotoDeclaration)
+	nmap <leader>k <Action>(QuickJavaDoc)
 
 	"" Para errores
 	nmap <leader>e <Action>(ShowErrorDescription)
 	nmap ge <Action>(GotoNextError)
 	nmap gE <Action>(GotoPreviousError)
 	nmap <leader>cw <Action>(RenameElement)
+
 	"" Para debug
 	nmap <leader>D <Action>(Debug)
 	nmap <leader>d <Action>(ToggleLineBreakpoint)
