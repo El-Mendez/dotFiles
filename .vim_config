@@ -61,8 +61,8 @@ if has('ide')
 	nmap <leader>h <Action>(PreviousTab)
 	nmap <leader>l <Action>(NextTab)
 
-	nmap <leader>Q <Action>(CloseEditor)
-	nmap <leader>q <Action>(CloseActiveTab)
+	nmap <leader>q <Action>(CloseEditor)
+	nmap <leader>Q <Action>(CloseActiveTab)
 
 	nmap <leader>o <Action>(GotoDeclaration)
 	nmap <leader>k <Action>(QuickJavaDoc)
