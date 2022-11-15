@@ -1,8 +1,9 @@
 $themes = @(
-	"amro", "atomic", "avit", "blueish", "blue-owl", "craver", "di4am0nd", "emodipt",
-	"festivetech", "fish", "half-life", "honukai", "hunk", "iterm2", "jblab_2021", 
-	"material", "microverse-power", "montys", "night-owl", "powerline", "probua.minimal",
-	"sonicboom_dark", "sorin", "space", "spaceship", "unicorn", "ys"
+	"amro", "avit", "catppuccin_frappe", "chips", "di4am0nd",
+	"easy-term", "half-life", "honukai", "hotstick.minimal",
+	"json", "kushal", "marcduiker", "material", "plague",
+	"powerlevel10k_lean", "sim-web", "space", "sorin",
+	"spaceship", "tokyonight_storm", "wopian"
 )
 
 $CURR_THEME = Get-Random $themes
