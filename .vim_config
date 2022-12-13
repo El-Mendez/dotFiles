@@ -13,11 +13,11 @@ endif
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
-Plug 'easymotion/vim-easymotion'
 
 set visualbell
 set relativenumber
 set number
+set incsearch
 
 if !has("ide")
 	Plug 'jiangmiao/auto-pairs'
@@ -38,22 +38,18 @@ call plug#end()
 "" General Settings
 imap kj <Esc>
 vmap kj <Esc>
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
 set timeoutlen=400
 
 let mapleader = " "
 nnoremap go :NERDTree<CR>
 
-"" Acciones de IDE
-nmap <leader>w <Plug>(easymotion-bd-w)
-nmap <leader>k <Plug>(easymotion-sol-k)
-nmap <leader>j <Plug>(easymotion-sol-j)
-
-nmap <leader>f <Plug>(easymotion-s)
-
 "" Para usar el clipboard
-nmap <leader>y \"*y
-vmap <leader>y \"*y
-nmap <leader>p \"*p
+nnoremap <leader>y \"+y
+vnoremap <leader>y \"+y
+nnoremap <leader>p \"+p
 
 "" Acciones de IDE
 if has('ide')
