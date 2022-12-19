@@ -13,6 +13,7 @@ endif
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
+Plug 'tommcdo/vim-exchange'
 
 set visualbell
 set relativenumber
