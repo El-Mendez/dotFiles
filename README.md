@@ -64,6 +64,12 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ln -s ~/dotFiles/.zshrc ~/.zshrc
 ```
 
+#### Cosas Fancy
+```
+sudo apt install fzf
+sudo apt install batcat
+```
+
 ## Jetbrains
 ### Extensiones
 Por alguna razón no me funciona bien la extensión para sincronizar extensiones. Aquí van los paquetes que uso:

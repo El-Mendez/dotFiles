@@ -21,11 +21,13 @@ ZSH_THEME_RANDOM_CANDIDATES=(
 # ENABLE_CORRECTION="true"
 
 plugins=(
-	git web-search zsh-autosuggestions 
-	colorize extract zsh-syntax-highlighting sudo
+	extract sudo z fzf
+	zsh-autosuggestions zsh-syntax-highlighting
+
 )
 
 source $ZSH/oh-my-zsh.sh
+export HISTCONTROL=ignorespace
 
 # User configuration
 
@@ -39,3 +41,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+export PATH=$PATH:$HOME/bin
+alias view='batcat --paging=always'
+export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+alias fls='fzf --preview "batcat --color=always --style=numbers --line-range=:500 {}"'
