@@ -68,6 +68,7 @@ ln -s ~/dotFiles/.zshrc ~/.zshrc
 ```
 sudo apt install fzf
 sudo apt install batcat
+sudo apt install fd-find
 ```
 
 ## Jetbrains

@@ -21,9 +21,8 @@ ZSH_THEME_RANDOM_CANDIDATES=(
 # ENABLE_CORRECTION="true"
 
 plugins=(
-	extract sudo z fzf
+	extract sudo z fzf thefuck
 	zsh-autosuggestions zsh-syntax-highlighting
-
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -41,7 +40,13 @@ export HISTCONTROL=ignorespace
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH=$PATH:$HOME/bin
-alias view='batcat --paging=always'
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+export FZF_DEFAULT_COMMAND='fdfind --hidden --follow --exclude ".git"'
+export PATH=$PATH:$HOME/bin
+
 alias fls='fzf --preview "batcat --color=always --style=numbers --line-range=:500 {}"'
+
+alias view='batcat --paging=always'
+alias bat='batcat'
+alias fd='fdfind'
+eval $(thefuck --alias argh)
