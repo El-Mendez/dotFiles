@@ -41,7 +41,7 @@ export HISTCONTROL=ignorespace
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
-export FZF_DEFAULT_COMMAND='fdfind --hidden --follow --exclude ".git"'
+export FZF_DEFAULT_COMMAND='fdfind --hidden --follow --exclude ".git" --type f --strip-cwd-prefix'
 export PATH=$PATH:$HOME/bin
 
 alias fls='fzf --preview "batcat --color=always --style=numbers --line-range=:500 {}"'
