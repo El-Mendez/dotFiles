@@ -55,6 +55,7 @@ nnoremap <leader>p \"+p
 
 "" Acciones de IDE
 if has('ide')
+	set ideajoin
 	"" Movimiento
 	nmap <leader>h <Action>(PreviousTab)
 	nmap <leader>l <Action>(NextTab)
