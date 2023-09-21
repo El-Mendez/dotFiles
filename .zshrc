@@ -5,7 +5,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="random"
+ZSH_THEME="random" # set by `omz`
 ZSH_THEME_RANDOM_CANDIDATES=( 
 	"agnoster" "cypher" "dstufft" "half-life" "gnzh"
 	"steeef" "suvash" "ys"
@@ -21,7 +21,7 @@ ZSH_THEME_RANDOM_CANDIDATES=(
 # ENABLE_CORRECTION="true"
 
 plugins=(
-	extract sudo z fzf thefuck
+	extract sudo z fzf
 	zsh-autosuggestions zsh-syntax-highlighting
 )
 
@@ -48,8 +48,26 @@ fls() {
 	fdfind . $1 --hidden --follow --exclude ".git" --type f | fzf --preview "batcat --color=always --style=numbers --line-range=:500 {}"
 }
 
+alert() {
+	SOUND="/usr/share/sounds/Pop/stereo/notification/complete.oga"
+
+	START=$SECONDS
+	eval "$@"
+	END=$SECONDS
+
+	echo -e "\n\e[4m\e[1m > took $((END-START)) seconds. \e[0m"
+	paplay "$SOUND"
+	# spd-say "$@ done"
+	
+	zenity --notification --text "Command done: $@"
+}
+
 alias view='batcat --paging=always'
 alias bat='batcat'
 alias fd='fdfind'
 alias s="kitty +kitten ssh"
-eval $(thefuck --alias argh)
+
+export ANDROID_HOME="~/Android/Sdk"
+
+source ~/.config/op/plugins.sh
+
