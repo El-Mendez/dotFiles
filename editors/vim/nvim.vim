@@ -1,5 +1,4 @@
 let NERDTreeShowHidden=1
-colorscheme pablo
 
 source ~/dotFiles/editors/vim/common.vim
 
@@ -9,7 +8,16 @@ let g:plugins += [
 	\ 'vim-airline/vim-airline-themes',
 	\ 'Yggdroot/indentLine',
 	\ 'ryanoasis/vim-devicons',
+	\ 'folke/tokyonight.nvim',
 \]
+
+let g:airline_theme= 'deus'
+
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
 
 call RunPlugins()
 
+colorscheme tokyonight-night
