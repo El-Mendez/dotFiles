@@ -12,21 +12,21 @@ Install-Module PSReadLine
 
 # profile script
 New-Item `
-	-Path %userprofile%\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 `
+	-Path $env:userprofile\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 `
 	-ItemType SymbolicLink `
-	-Value %userprofile%\dotFiles\shells\pwsh.ps1
+	-Value $env:userprofile\dotFiles\shells\pwsh.ps1
 
 # ideavimrc
 New-Item `
-	-Path %userprofile%\.ideavimrc `
+	-Path $env:userprofile\.ideavimrc `
 	-ItemType SymbolicLink `
-	-Value %userprofile%\dotFiles\editors\vim\idea.vim
+	-Value $env:userprofile\dotFiles\editors\vim\idea.vim
 
 # nvim
 New-Item `
-	-Path %userprofile%\AppData\Local\nvim\init.vim `
+	-Path $env:userprofile\AppData\Local\nvim\init.vim `
 	-ItemType SymbolicLink `
-	-Value %userprofile%\dotFiles\editors\vim\nvim.vim
+	-Value $env:userprofile\dotFiles\editors\vim\nvim.vim
 
 # config de git
 git config --global commit.template ~/dotFiles/git/common.gittemplate
