@@ -9,6 +9,7 @@
 ```pwsh
 winget install JanDeDobbeleer.OhMyPosh
 Install-Module PSReadLine
+Install-Module z -AllowClobber
 
 # profile script
 New-Item `

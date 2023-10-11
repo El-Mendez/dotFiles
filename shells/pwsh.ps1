@@ -17,3 +17,4 @@ echo ""
 
 oh-my-posh --init --shell pwsh --config "$env:POSH_THEMES_PATH\$CURR_THEME.omp.json" | Invoke-Expression
 Set-PSReadLineOption -PredictionSource History
+Import-Module z
