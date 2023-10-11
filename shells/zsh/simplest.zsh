@@ -13,8 +13,7 @@ export PATH=$PATH:$HOME/bin
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="random" # set by `omz`
 ZSH_THEME_RANDOM_CANDIDATES=( 
-	"agnoster" "cypher" "dstufft" "half-life" "gnzh"
-	"steeef" "suvash" "ys"
+	"af-magic" "frontcube" "intheloop" "muse"
 )
 
 plugins=(
