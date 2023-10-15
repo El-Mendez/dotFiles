@@ -19,7 +19,7 @@ nnoremap ZS :w<cr>
 nnoremap go :NERDTree<CR>
 
 "" Clipboard
-nnoremap <leader>y \"+y
-vnoremap <leader>y \"+y
-nnoremap <leader>p \"+p
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>p "+p
 

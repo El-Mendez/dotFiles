@@ -22,3 +22,6 @@ export ANDROID_HOME="~/Android/Sdk"
 alias s="kitty +kitten ssh"
 source ~/.config/op/plugins.sh
 
+alias adb="~/Android/Sdk/platform-tools/adb"
+alias emulator="~/Android/Sdk/tools/emulator"
+
