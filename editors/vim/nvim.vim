@@ -2,20 +2,18 @@ let NERDTreeShowHidden=1
 
 source ~/dotFiles/editors/vim/common.vim
 
-let g:plugins += [
+let g:plugins = [
 	\ 'tpope/vim-commentary',
         \ 'tpope/vim-surround',
         \ 'preservim/nerdtree',
         \ 'tommcdo/vim-exchange',
-
 	\ 'jiangmiao/auto-pairs',
 	\ 'vim-airline/vim-airline',
 	\ 'vim-airline/vim-airline-themes',
 	\ 'Yggdroot/indentLine',
 	\ 'ryanoasis/vim-devicons',
 	\ 'folke/tokyonight.nvim',
-
-\]
+\ ]
 
 let g:airline_theme= 'deus'
 
