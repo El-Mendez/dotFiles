@@ -21,4 +21,7 @@ nmap <leader>d <Action>(ToggleLineBreakpoint)
 
 nmap <leader>r <Action>(Run)
 
-RunPlugins()
+"""RunPlugins()
+set commentary
+set NERDTree
+set surround
