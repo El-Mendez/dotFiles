@@ -30,7 +30,6 @@ New-Item `
 	-Value $env:userprofile\dotFiles\editors\vim\nvim.vim
 
 # config de git
-git config --global commit.template ~/dotFiles/git/common.gittemplate
 git config --global core.excludesfile ~/dotFiles/git/common.gitignore
 git config --global include.path ~/dotFiles/git/common.gitconfig
 ```
@@ -72,7 +71,6 @@ ln -s ~/dotFiles/shells/zsh/desktop.zsh ~/.zshrc
 ln -s ~/dotFiles/editors/vim/idea.vim ~/.ideavimrc
 ln -s ~/dotFiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 
-git config --global commit.template ~/dotFiles/git/common.gittemplate
 git config --global core.excludesfile ~/dotFiles/git/common.gitignore
 git config --global include.path ~/dotFiles/git/common.gitconfig
 ```

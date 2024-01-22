@@ -25,3 +25,4 @@ nmap <leader>r <Action>(Run)
 set commentary
 set NERDTree
 set surround
+set ideajoin

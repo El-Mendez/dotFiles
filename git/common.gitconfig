@@ -4,6 +4,7 @@
 [core]
 	longpaths = true
 	editor = nvim
+	autocrlf = input
 [commit]
 	gpgSign = true
 [tag]
