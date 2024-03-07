@@ -13,7 +13,7 @@ Install-Module z -AllowClobber
 
 # profile script
 New-Item `
-	-Path $env:userprofile\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 `
+	-Path $profile `
 	-ItemType SymbolicLink `
 	-Value $env:userprofile\dotFiles\shells\pwsh.ps1
 
