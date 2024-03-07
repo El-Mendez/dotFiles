@@ -24,3 +24,6 @@ plugins=(
 if [[ $ZSH_EVAL_CONTEXT == 'file' ]]; then
     source $ZSH/oh-my-zsh.sh
 fi
+
+alias v="nvim"
+

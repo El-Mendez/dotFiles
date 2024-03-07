@@ -21,13 +21,13 @@ New-Item `
 New-Item `
 	-Path $env:userprofile\.ideavimrc `
 	-ItemType SymbolicLink `
-	-Value $env:userprofile\dotFiles\editors\vim\idea.vim
+	-Value $env:userprofile\dotFiles\vim\init.vim
 
 # nvim
 New-Item `
 	-Path $env:userprofile\AppData\Local\nvim\init.vim `
 	-ItemType SymbolicLink `
-	-Value $env:userprofile\dotFiles\editors\vim\nvim.vim
+	-Value $env:userprofile\dotFiles\vim\init.vim
 
 # config de git
 git config --global core.excludesfile ~/dotFiles/git/common.gitignore
@@ -42,7 +42,7 @@ sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-ln -s ~/dotFiles/editors/vim/nvim.vim ~/.config/nvim/init.vim
+ln -s ~/dotFiles/vim/init.vim ~/.config/nvim/init.vim
 ln -s ~/dotFiles/shells/zsh/simplest.zsh ~/.zshrc
 ```
 
@@ -54,7 +54,7 @@ sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-ln -s ~/dotFiles/editors/vim/nvim.vim ~/.config/nvim/init.vim
+ln -s ~/dotFiles/vim/init.vim ~/.config/nvim/init.vim
 ln -s ~/dotFiles/shells/zsh/terminal.zsh ~/.zshrc
 ```
 
@@ -66,9 +66,10 @@ sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-ln -s ~/dotFiles/editors/vim/nvim.vim ~/.config/nvim/init.vim
+ln -s ~/dotFiles/vim/init.vim ~/.config/nvim/init.vim
+ln -s ~/dotFiles/vim/init.vim ~/.ideavimrc
+
 ln -s ~/dotFiles/shells/zsh/desktop.zsh ~/.zshrc
-ln -s ~/dotFiles/editors/vim/idea.vim ~/.ideavimrc
 ln -s ~/dotFiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 
 git config --global core.excludesfile ~/dotFiles/git/common.gitignore

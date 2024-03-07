@@ -1,7 +1,5 @@
 let NERDTreeShowHidden=1
 
-source ~/dotFiles/editors/vim/common.vim
-
 let g:plugins = [
 	\ 'tpope/vim-commentary',
         \ 'tpope/vim-surround',
