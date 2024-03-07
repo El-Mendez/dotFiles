@@ -1,6 +1,6 @@
 $themes = @(
 	"amro", "di4m0nd", "easy-term", "emodipt", "emodipt-extend", "honukai", "powerlevel10k_lean", 
-        "probua.minimal", "pure", "robbyrussel", "spaceship", "star", "the-unnamed", "wopian", "ys", "zash"
+        "probua.minimal", "pure", "spaceship", "star", "the-unnamed", "wopian", "ys", "zash"
 )
 
 $CURR_THEME = Get-Random $themes

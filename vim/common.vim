@@ -8,6 +8,8 @@ set visualbell
 set relativenumber
 set number
 set incsearch
+set ignorecase
+set smartcase
 map Q gq
 
 "" keybinds
