@@ -1,6 +1,3 @@
-nmap <leader>h <Action>(PreviousTab)
-nmap <leader>l <Action>(NextTab)
-
 nmap <leader>q <Action>(CloseEditor)
 nmap <leader>Q <Action>(CloseActiveTab)
 
@@ -19,3 +16,4 @@ set commentary
 set NERDTree
 set surround
 set ideajoin
+set highlightedyank

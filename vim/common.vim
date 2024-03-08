@@ -20,17 +20,29 @@ nnoremap <C-u> <C-u>zz
 nnoremap ZS :w<cr>
 nnoremap go :NERDTree<CR>
 
+
 "" Clipboard
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nnoremap <leader>p "+p
 
 "" tab movement
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap gl :bnext<CR>
+nnoremap gh :bprev<CR>
+
+nnoremap gH <C-w>h
+nnoremap gJ <C-w>j
+nnoremap gK <C-w>k
+nnoremap gL <C-w>l
+
+"" move tabs themselves
+nnoremap <leader>l :tabm+1<CR>
+nnoremap <leader>h :tabm-1<CR>
 
 nnoremap <leader>s :vsp<cr>
 nnoremap <leader>S :sp<cr>
+
+
+let g:highlightedyank_highlight_duration = "150"
+let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 90)"
 
