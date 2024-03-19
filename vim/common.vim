@@ -27,8 +27,8 @@ vnoremap <leader>y "+y
 nnoremap <leader>p "+p
 
 "" tab movement
-nnoremap gl :bnext<CR>
-nnoremap gh :bprev<CR>
+nnoremap gl gt
+nnoremap gh gT
 
 nnoremap gH <C-w>h
 nnoremap gJ <C-w>j

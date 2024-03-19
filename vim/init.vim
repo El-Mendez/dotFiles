@@ -5,4 +5,3 @@ if has('ide')
 else
     source ~/dotFiles/vim/nvim.vim
 endif
-
