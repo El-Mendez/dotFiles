@@ -25,5 +25,9 @@ if [[ $ZSH_EVAL_CONTEXT == 'file' ]]; then
     source $ZSH/oh-my-zsh.sh
 fi
 
+
 alias v="nvim"
+mcd() {
+  mkdir -p "$1" && cd "$1"
+}
 
