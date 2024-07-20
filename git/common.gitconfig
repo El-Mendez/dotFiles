@@ -12,6 +12,8 @@
 [alias]
 	graph = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local
 	sw = switch -
+        ph = "!git pull origin $(git branch --show-current)"
+        reset-origin = "!git fetch origin $(git branch --show-current) && git reset --hard origin/$(git branch --show-current) && git clean -f -d"
 [gpg]
 	format = ssh
 [filter "lfs"]
