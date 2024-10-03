@@ -12,6 +12,11 @@ winget install ajeetdsouza.zoxide
 
 # profile script
 New-Item `
+	-Path $env:userprofile\.config\starship.toml `
+	-ItemType SymbolicLink `
+	-Value $env:userprofile\dotFiles\.config\starship.toml
+
+New-Item `
 	-Path $profile `
 	-ItemType SymbolicLink `
 	-Value $env:userprofile\dotFiles\.config\powershell\pwsh.ps1
@@ -44,6 +49,7 @@ ln -s ~/dotFiles/.config/nvim/init.vim ~/.config/nvim/init.vim
 ln -s ~/dotFiles/.config/fish/config.fish ~/.config/fish/config.fish
 ln -s ~/dotFiles/.config/nvim/init.vim ~/.ideavimrc
 ln -s ~/dotFiles/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf
+ln -s ~/dotFiles/.config/starship.toml ~/.config/starship.toml
 
 git config --global core.excludesfile ~/dotFiles/.config/git/common.gitignore
 git config --global include.path ~/dotFiles/.config/git/common.gitconfig
