@@ -46,3 +46,11 @@ nnoremap <leader>S :sp<cr>
 let g:highlightedyank_highlight_duration = "150"
 let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 90)"
 
+
+
+" set the config
+if has('ide')
+    source ~/dotFiles/.config/nvim/idea.vim
+else
+    source ~/dotFiles/.config/nvim/nvim.vim
+endif

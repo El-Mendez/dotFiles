@@ -7,9 +7,8 @@
  - [NerdFonts](https://www.nerdfonts.com/font-downloads)
 
 ```pwsh
-winget install JanDeDobbeleer.OhMyPosh
-Install-Module PSReadLine
-Install-Module z -AllowClobber
+winget install starship
+winget install ajeetdsouza.zoxide
 
 # profile script
 New-Item `
@@ -21,57 +20,33 @@ New-Item `
 New-Item `
 	-Path $env:userprofile\.ideavimrc `
 	-ItemType SymbolicLink `
-	-Value $env:userprofile\dotFiles\vim\init.vim
+	-Value $env:userprofile\dotFiles\.config\nvim\init.vim
 
 # nvim
 New-Item `
 	-Path $env:userprofile\AppData\Local\nvim\init.vim `
 	-ItemType SymbolicLink `
-	-Value $env:userprofile\dotFiles\vim\init.vim
+	-Value $env:userprofile\dotFiles\.config\nvim\init.vim
 
 # config de git
-git config --global core.excludesfile ~/dotFiles/git/common.gitignore
-git config --global include.path ~/dotFiles/git/common.gitconfig
+git config --global core.excludesfile ~/dotFiles/.config/git/common.gitignore
+git config --global include.path ~/dotFiles/.config/git/common.gitconfig
 ```
 
 ## Linux
-### Simple
 ```bash
-sudo apt-get install zsh
-sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+sudo apt install fish fzf batcat fd-find
 
-ln -s ~/dotFiles/vim/init.vim ~/.config/nvim/init.vim
-ln -s ~/dotFiles/shells/zsh/simplest.zsh ~/.zshrc
-```
+curl -sS https://starship.rs/install.sh | sh
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
-### Terminal
-```bash
-sudo apt install zsh fzf batcat fd-find
+ln -s ~/dotFiles/.config/nvim/init.vim ~/.config/nvim/init.vim
+ln -s ~/dotFiles/.config/fish/config.fish ~/.config/fish/config.fish
+ln -s ~/dotFiles/.config/nvim/init.vim ~/.ideavimrc
+ln -s ~/dotFiles/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf
 
-sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git config --global core.excludesfile ~/dotFiles/.config/git/common.gitignore
+git config --global include.path ~/dotFiles/.config/git/common.gitconfig
 
-ln -s ~/dotFiles/vim/init.vim ~/.config/nvim/init.vim
-ln -s ~/dotFiles/shells/zsh/terminal.zsh ~/.zshrc
-```
 
-### Desktop
-```bash
-sudo apt install zsh fzf batcat fd-find
-
-sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-ln -s ~/dotFiles/vim/init.vim ~/.config/nvim/init.vim
-ln -s ~/dotFiles/vim/init.vim ~/.ideavimrc
-
-ln -s ~/dotFiles/shells/zsh/desktop.zsh ~/.zshrc
-ln -s ~/dotFiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
-
-git config --global core.excludesfile ~/dotFiles/git/common.gitignore
-git config --global include.path ~/dotFiles/git/common.gitconfig
 ```
