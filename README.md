@@ -14,7 +14,7 @@ winget install ajeetdsouza.zoxide
 New-Item `
 	-Path $profile `
 	-ItemType SymbolicLink `
-	-Value $env:userprofile\dotFiles\shells\pwsh.ps1
+	-Value $env:userprofile\dotFiles\.config\powershell\pwsh.ps1
 
 # ideavimrc
 New-Item `
