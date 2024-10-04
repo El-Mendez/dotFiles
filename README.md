@@ -40,7 +40,10 @@ git config --global include.path ~/dotFiles/.config/git/common.gitconfig
 
 ## Linux
 ```bash
-sudo apt install fish fzf batcat fd-find
+git clone https://github.com/El-Mendez/dotFiles
+
+sudo apt install fish fzf fd-find
+sudo apt install batcat
 
 curl -sS https://starship.rs/install.sh | sh
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
@@ -54,5 +57,5 @@ ln -s ~/dotFiles/.config/starship.toml ~/.config/starship.toml
 git config --global core.excludesfile ~/dotFiles/.config/git/common.gitignore
 git config --global include.path ~/dotFiles/.config/git/common.gitconfig
 
-
+chsh -s $(which fish)
 ```
