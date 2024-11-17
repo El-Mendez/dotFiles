@@ -1,0 +1,111 @@
+# ansible-playbook
+---
+- name: Setup the App
+  hosts: all
+  tasks:
+  - name: Install Dependencies
+    become: true
+    ansible.builtin.apt:
+      pkg:
+        - fish
+        - fzf
+        - fd-find
+        - bat
+        - unzip
+      state: latest
+      update_cache: true
+
+  - name: Install nvim
+    become: yes
+    community.general.snap:
+      name: nvim
+      classic: yes
+
+  - name: Download Starship
+    ansible.builtin.unarchive:
+      src: "https://github.com/starship/starship/releases/latest/download/starship-{{ ansible_architecture }}-unknown-linux-musl.tar.gz"
+      remote_src: yes
+      dest: /tmp
+      creates: "/tmp/starship"
+
+  - name: Move the Starship executable
+    become: true
+    ansible.builtin.copy:
+      src: "/tmp/starship"
+      remote_src: true
+      dest: "/usr/local/bin"
+      owner: "root"
+      group: "root"
+      mode: '0755'
+
+  - name: Check latest Zoxide Version
+    ansible.builtin.uri:
+      url: "https://api.github.com/repos/ajeetdsouza/zoxide/releases/latest"
+      method: GET
+      return_content: yes
+    register: api_response
+
+  - name: Extract latest version
+    ansible.builtin.set_fact:
+      zoxide_version: "{{ api_response.json | json_query('name') }}"
+
+  - name: Download Starship
+    ansible.builtin.unarchive:
+      src: "https://github.com/ajeetdsouza/zoxide/releases/download/v{{ zoxide_version }}/zoxide-{{ zoxide_version }}-{{ ansible_architecture }}-unknown-linux-musl.tar.gz"
+      remote_src: yes
+      dest: /tmp
+      creates: "/tmp/zoxide"
+
+  - name: Creates local bin directory
+    ansible.builtin.file:
+      path: "{{ ansible_user_dir }}/.local/bin"
+      state: directory
+      mode: '0755'
+
+  - name: Move the starship executable
+    ansible.builtin.copy:
+      src: "/tmp/zoxide"
+      remote_src: true
+      mode: "0755"
+      dest: "{{ ansible_user_dir }}/.local/bin/zoxide"
+
+  - name: Create the config location
+    ansible.builtin.file:
+      path: "{{ ansible_user_dir }}/.config/{{ item }}"
+      state: directory
+      mode: '0755'
+    loop:
+      - nvim
+      - fish
+      - kitty
+
+  - name: Download the dotfiles
+    ansible.builtin.unarchive:
+      src: "https://github.com/El-Mendez/dotFiles/archive/refs/heads/main.zip"
+      remote_src: yes
+      dest: "{{ ansible_user_dir }}"
+      creates: "{{ ansible_user_dir }}/dotfiles"
+
+  - name: Download the dotfiles
+    ansible.builtin.git:
+      repo: "https://github.com/El-Mendez/dotFiles"
+      clone: true
+      dest: "{{ ansible_user_dir }}/dotFiles"
+
+  - name: Create the symlinks
+    ansible.builtin.file:
+      src: "{{ ansible_user_dir }}/dotFiles/{{ item.source }}"
+      dest: "{{ ansible_user_dir }}/{{ item.dest }}"
+      state: "link"
+    loop:
+      - { source: ".config/nvim/init.vim",    dest: ".config/nvim/init.vim" }
+      - { source: ".config/fish/config.fish", dest: ".config/fish/config.fish" }
+      - { source: ".config/nvim/init.vim",    dest: ".ideavimrc" }
+      - { source: ".config/kitty/kitty.conf", dest: ".config/kitty/kitty.conf" }
+      - { source: ".config/starship.toml",    dest: ".config/starship.toml" }
+
+  - name: Change shell to fish
+    become: yes
+    user:
+      name: "{{ ansible_user_id }}"
+      shell: /usr/bin/fish
